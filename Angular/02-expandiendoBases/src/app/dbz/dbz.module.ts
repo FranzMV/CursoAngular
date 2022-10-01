@@ -11,11 +11,12 @@ import { MainPageComponent } from './main-page/main-page.component';
     MainPageComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
+
   ],
   exports:[
     MainPageComponent,
-    FormsModule
   ]
 })
 export class DbzModule { }
