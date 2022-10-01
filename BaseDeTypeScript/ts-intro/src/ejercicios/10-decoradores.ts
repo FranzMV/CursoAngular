@@ -1,6 +1,7 @@
 /*
     ===== Código de TypeScript =====
 */
+
 function classDecorator<T extends { new (...args: any[]): {} }>(
     constructor: T
   ) {
