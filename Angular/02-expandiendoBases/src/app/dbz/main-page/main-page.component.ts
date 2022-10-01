@@ -1,15 +1,12 @@
 import { Component } from '@angular/core';
-
-interface Personaje{
-  nombre : string;
-  poder : number;
-}
+import { Personaje } from '../interfaces/dbz.intefaces';
 
 
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
 })
+
 export class MainPageComponent {
   personajes: Personaje[] = [
     {

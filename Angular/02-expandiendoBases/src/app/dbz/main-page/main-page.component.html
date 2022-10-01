@@ -3,13 +3,9 @@
 
 <div class="row">
     <div class="col">
-        <h3>Personajes</h3>
-        <hr>
-        <ul>
-            <li *ngFor="let personaje of personajes">
-                {{ personaje.nombre}} - {{personaje.poder | number}}    
-            </li>
-        </ul>
+        <app-personajes [personajes]="personajes">
+
+        </app-personajes>
     </div>
 
     <div class="col">
@@ -22,10 +18,6 @@
                 name="nombre" 
                 [(ngModel)] ="nuevo.nombre"
             />
-              <!--
-                [value]="nuevo.nombre"
-                (input)="cambiarNombre( $event)"
-            -->
             <input 
                 type="number" 
                 placeholder="Poder" 
