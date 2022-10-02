@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Personaje } from '../interfaces/dbz.intefaces';
+import { DbzService } from '../services/dbz.service';
 
 
 @Component({
@@ -26,6 +27,11 @@ export class MainPageComponent {
 
   agregarNuevoPersonaje( nuevoPersonaje : Personaje) : void {
     this.personajes.push(nuevoPersonaje);
+  }
+
+  //Inyeccion de dependencias: Inyectamos el servicio de este comoponente
+  constructor(private dbzService: DbzService){
+
   }
 
 }

@@ -8,4 +8,5 @@ import { Personaje } from '../interfaces/dbz.intefaces';
 export class PersonajesComponent {
 
   @Input() personajes : Personaje [] = []; //Pasarle este componente al componente padre
+
 }

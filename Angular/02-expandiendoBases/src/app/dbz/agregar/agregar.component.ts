@@ -8,12 +8,10 @@ import { Personaje } from '../interfaces/dbz.intefaces';
 })
 export class AgregarComponent  {
  
-
   @Input() nuevo : Personaje ={
     nombre: '',
     poder: 0
   }
-
 
   //Emitir eventos
   @Output() onNuevoPersonaje : EventEmitter<Personaje> = new EventEmitter<Personaje>();
