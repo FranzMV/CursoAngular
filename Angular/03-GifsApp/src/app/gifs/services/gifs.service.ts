@@ -3,8 +3,6 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { SearchGifsResponse, Gif } from '../interfaces/gifs.interface';
 
 
-
-
 @Injectable({
   providedIn: 'root'//Se encuentra a nivel global
 })
@@ -45,7 +43,6 @@ export class GifsService {
     //Peticion Http
     this.http.get <SearchGifsResponse>(`${this.servicioUrl}/search`,{ params })
       .subscribe( (resp ) => {
-        console.log(resp.data);
         this.resultados = resp.data;
         localStorage.setItem('resultados', JSON.stringify(this.resultados));
       });
