@@ -20,15 +20,21 @@ export class GifsService {
 
   get historial(){ return [...this._historial]; }
 
-  constructor(private http: HttpClient){ }
+  constructor(private http: HttpClient){ 
+
+    if( localStorage.getItem('historial')){
+      this._historial = JSON.parse(localStorage.getItem('historial')!);
+    }
+  }
 
   buscarGifs( query: string ) : void{
     query = query.trim().toLowerCase();
     if(!this._historial.includes( query )){
       this._historial.unshift( query );
       this._historial = this._historial.splice(0, 10);
+
+      localStorage.setItem('historial', JSON.stringify(this._historial));
     }
-    
     //Peticion Http
     this.http.get <SearchGifsResponse>(`${this.servicioUrl}/search?api_key=${this.apiKey}=${query}&limit=${this.limit}`)
       .subscribe( (resp ) => {
@@ -36,4 +42,5 @@ export class GifsService {
         this.resultados = resp.data;
       });
   }
+
 }

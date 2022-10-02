@@ -1,5 +1,4 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { GifsModule } from '../gifs.module';
 import { GifsService } from '../services/gifs.service';
 
 @Component({
@@ -17,7 +16,7 @@ export class BusquedaComponent {
     if(value.trim().length === 0) { return }
 
     this.gifsService.buscarGifs(value);
-    
+
     this.txtBuscar.nativeElement.value = '';
   }
 }
