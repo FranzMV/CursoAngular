@@ -6,13 +6,6 @@ import { GifsService } from '../services/gifs.service';
   templateUrl: './resultados.component.html',
 })
 export class ResultadosComponent {
-
-  get resultados(){
-    return this.gifsService.resultados;
-  }
-
+  get resultados() { return this.gifsService.resultados; }
   constructor(private gifsService: GifsService) { }
-
-  
-
 }
